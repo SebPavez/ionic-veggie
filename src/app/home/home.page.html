@@ -1,14 +1,23 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Administraci&oacute;n m&oacute;vil
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <ion-list>
+      <ion-item lines="none" *ngFor="let element of array">
+        <ion-label>
+          ID Muro:{{element.id_muro}} Maceta:{{element.id_maceta}}
+        </ion-label>
+        <ion-button size="small" color="primary" (click)="regarMaceta(element.id_maceta)">Regar <ion-icon name="rainy"></ion-icon></ion-button>
+      </ion-item>
+    </ion-list>
   </div>
+  <form #form="ngForm" (ngSubmit)="prueba()">
+    <ion-button size="large" type="submit" expand="block">obtener macetas</ion-button>    
+  </form>
 </ion-content>
